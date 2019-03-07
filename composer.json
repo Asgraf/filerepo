@@ -1,5 +1,5 @@
 {
-    "name": "Asgraf/filerepo",
+    "name": "asgraf/filerepo",
     "description": "Filerepo plugin for CakePHP",
     "type": "cakephp-plugin",
     "license": "MIT",
