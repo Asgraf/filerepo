@@ -10,7 +10,7 @@ use Cake\Event\Event;
  */
 class FileobjectsController extends AppController
 {
-	public $guestActions = ['view','download'];
+	public $guestActions = ['view', 'download'];
 
 	public function initialize()
 	{
@@ -36,7 +36,19 @@ class FileobjectsController extends AppController
 	private function outputFileobject($fileobject, $download = false)
 	{
 		/** @var \Filerepo\Model\Entity\Fileobject $fileobject */
-		$response = $this->getResponse()
+
+		/** @var \Cake\Http\Response $response */
+		$response = $this->getResponse();
+		if ($download) {
+			$response = $response->withModified($fileobject->modified);
+		} else {
+			$response = $response->withCache($fileobject->modified);
+		}
+		if ($response->checkNotModified($this->request)) {
+			return $response;
+		}
+
+		$response = $response
 			->withBody($fileobject->getStream())
 			->withType($fileobject->type)
 			->withHeader('Content-Transfer-Encoding', 'binary')

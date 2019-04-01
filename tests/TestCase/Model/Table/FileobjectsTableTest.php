@@ -10,7 +10,6 @@ use Filerepo\Model\Table\FileobjectsTable;
  */
 class FileobjectsTableTest extends TestCase
 {
-
     /**
      * Test subject
      *
@@ -72,21 +71,51 @@ class FileobjectsTableTest extends TestCase
     }
 
     /**
-     * Test getModelnameList method
+     * Test buildRules method
      *
      * @return void
      */
-    public function testGetModelnameList()
+    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
 
     /**
-     * Test getModelnameValues method
+     * Test clearThumbs method
      *
      * @return void
      */
-    public function testGetModelnameValues()
+    public function testClearThumbs()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test clearAllThumbs method
+     *
+     * @return void
+     */
+    public function testClearAllThumbs()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test cleanupUnusedFiles method
+     *
+     * @return void
+     */
+    public function testCleanupUnusedFiles()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test getThumbnail method
+     *
+     * @return void
+     */
+    public function testGetThumbnail()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

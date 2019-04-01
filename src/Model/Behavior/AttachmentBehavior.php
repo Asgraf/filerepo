@@ -40,7 +40,9 @@ class AttachmentBehavior extends Behavior
 			->setConditions([
 				$alias.'.fk_model' => $this->getTable()->getAlias(),
 				$alias.'.scope' => $fieldname
-			]);
+			])
+			->setFinder('withoutFileContent')
+		;
 
 		$assoc->getEventManager()->on(
 			'Model.afterSave',
