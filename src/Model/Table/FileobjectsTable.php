@@ -173,7 +173,7 @@ class FileobjectsTable extends Table
 		$table = TableRegistry::getTableLocator()->get($modelname);
 
 		return $this->deleteAll([
-			'fk_model' => $modelname,
+			'fk_model' => $table->getAlias(),
 			'fk_id NOT IN' => $table->find()->select($table->getPrimaryKey())
 		]);
 	}
